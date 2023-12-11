@@ -722,7 +722,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
   };
   attributes: {
     date: Attribute.Date;
-    time: Attribute.Time;
+    time: Attribute.Time & Attribute.DefaultTo<'00:00'>;
     location: Attribute.JSON &
       Attribute.CustomField<'plugin::location-plugin.location'>;
     description: Attribute.Text;
@@ -731,6 +731,8 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'manyToMany',
       'api::source.source'
     >;
+    location_name: Attribute.String;
+    source_paths: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

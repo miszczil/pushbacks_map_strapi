@@ -16,7 +16,8 @@
       "type": "date"
     },
     "time": {
-      "type": "time"
+      "type": "time",
+      "default": "00:00"
     },
     "location": {
       "type": "customField",
@@ -30,6 +31,12 @@
       "relation": "manyToMany",
       "target": "api::source.source",
       "inversedBy": "events"
+    },
+    "location_name": {
+      "type": "string"
+    },
+    "source_paths": {
+      "type": "text"
     }
   }
 }
